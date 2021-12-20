@@ -74,8 +74,7 @@ def plotnine_grid(plots_list, row=None, col=1, height=None, width=None, dpi=500,
         os.unlink('image' + str(i - 1) + '.png')  # os.unlink is basically os.remove but in some cases quicker
         fig.patch.set_visible(False)
 
-        file = file.replace(' ', '_')
-        fig.savefig('CNS_EOG/imgs/{}.png'.format(file))
-
-    matplotlib.pyplot.close()
+    if file:
+        fig.savefig('{}'.format(file))
+        matplotlib.pyplot.close()
     # return fig
